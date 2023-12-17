@@ -16,6 +16,7 @@ RUN rm ./target/release/deps/app_service*
 RUN cargo build --release
 
 FROM debian:buster-slim
+RUN apt-get update & apt-get install -y extra-runtime-dependencies & rm -rf /var/lib/apt/lists/*
 
 # COPY --from=build /app/target/release/<app_service_name> .  |note: replace - to _
 # CMD ["./<app_name>"] |note: replace - to _

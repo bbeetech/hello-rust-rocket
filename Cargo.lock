@@ -27,7 +27,7 @@ dependencies = [
 ]
 
 [[package]]
-name = "app-service"
+name = "app_service"
 version = "0.1.0"
 dependencies = [
  "rocket",
