@@ -5,8 +5,6 @@ WORKDIR /app
 
 COPY ./Cargo.lock ./Cargo.lock
 COPY ./Cargo.toml ./Cargo.toml
-# Add Rocket framework config file
-COPY ./Rocket.toml ./Rocket.toml
 
 RUN cargo build --release
 
@@ -24,4 +22,8 @@ FROM rust:slim
 # CMD ["./<app_service_name>"]
 
 COPY --from=build /app/target/release/app_service .
+
+# Rocket framework: Add config file
+COPY ./Rocket.toml ./Rocket.toml
+
 CMD ["./app_service"]
