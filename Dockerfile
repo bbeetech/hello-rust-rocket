@@ -10,6 +10,9 @@ RUN cargo build --release
 RUN rm src/*.rs
 COPY ./src ./src
 
+# Add Rocket framework config file
+COPY ./Rocket.toml ./Rocket.toml
+
 # RUN rm ./target/release/deps/<app_service_name>*  |note: replace - to _
 RUN rm ./target/release/deps/app_service*
 
