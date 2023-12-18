@@ -6,6 +6,16 @@ provider:
     images:
       hello-rust-rocket:
         path: ./
+  region: ap-southeast-1
+  stage: v1
+  environment:
+    IS_LAMBDA_ENV: true
+    SENTRY_ENV: production
+    SENTRY_IO_DSN: ${env:SENTRY_IO_DSN}
+  httpApi:
+    cors: true
+  deploymentBucket:
+    name: xu.chanh
 
 functions:
   hello:
