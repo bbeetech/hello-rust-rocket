@@ -16,7 +16,7 @@ RUN rm ./target/release/deps/app_service*
 
 RUN cargo build --release
 
-FROM rust:slim
+FROM rust:latest
 
 # COPY --from=build /app/target/release/<app_service_name> .
 # CMD ["./<app_service_name>"]
