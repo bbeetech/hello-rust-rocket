@@ -7,8 +7,8 @@ on:
 
 jobs:
   deploy:
+    name: deploy
     runs-on: ubuntu-latest
-
     steps:
       - name: Checkout code
         uses: actions/checkout@v2
@@ -21,10 +21,10 @@ jobs:
         with:
           context: .
           push: true
-          tags: app-service:latest
+          tags: your-registry-url/your-image-name:latest
 
-      - name: serverless deploy
-        uses: serverless/github-action@v3.2
+      - name: Deploy to AWS Lambda
+        uses: serverless/github-action@v1
         with:
           args: deploy
         env:
