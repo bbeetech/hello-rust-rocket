@@ -23,8 +23,8 @@ steps:
       push: true
       tags: app-service:latest
 
-  - name: Deploy to AWS Lambda
-    uses: serverless/github-action@v1
+  - name: serverless deploy
+    uses: serverless/github-action@v3.2
     with:
       args: deploy
     env:
