@@ -1,0 +1,15 @@
+service: hello-rust-rocket
+
+provider:
+  name: aws
+  region: ap-southeast-1
+  ecr:
+    # In this section you can define images that will be built locally and uploaded to ECR
+    images:
+      hello-rust-rocket:
+        path: ./
+
+functions:
+  main:
+    image:
+      name: hello-rust-rocket
